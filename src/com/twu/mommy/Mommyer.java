@@ -7,8 +7,13 @@ public class Mommyer {
     private String MOMMY = "mommy";
 
     public String mommify(String word) {
-                return word.replaceAll("[aeiou]+", MOMMY);
-            
+        double lengthOfOriginalWord = word.length();
+        double numberOfVowels = lengthOfOriginalWord - word.replaceAll("[aeiouAEIOU]","").length();
+        if (numberOfVowels/lengthOfOriginalWord > 0.3) {
+            return word.replaceAll("[aeiouAEIOU]+", MOMMY);
+        }else{
+            return word;
         }
+    }
 
 }
